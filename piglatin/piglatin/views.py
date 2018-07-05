@@ -19,3 +19,6 @@ def translate(request):
 			translation += word[0]
 			translation += 'ay'
 	return render(request, 'translate.html', {'original': original, 'translation': translation})
+
+def about(request):
+	return render(request, 'about.html')
