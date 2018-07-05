@@ -6,7 +6,7 @@ def home(request):
 	return render(request, 'home.html')
 
 def translate(request):
-	original = request.GET['original']
+	original = request.GET['original'].lower()
 
 	translation = ''
 	for word in original.split():
@@ -17,7 +17,5 @@ def translate(request):
 		else:
 			translation += word[1:]
 			translation += word[0]
-			translation += ay
-
-			translation += 'consonant'
-	return render(request, 'translate.html')
+			translation += 'ay'
+	return render(request, 'translate.html', {'original': original, 'translation': translation})
